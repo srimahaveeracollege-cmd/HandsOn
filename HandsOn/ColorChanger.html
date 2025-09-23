@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Changer App</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s;
+    }
+    #btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+    #colorName {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Color Changer App</h1>
+  <button id="btn">Change Color</button>
+  <p id="colorName">Current Color: White</p>
+
+  <script>
+    let button = document.getElementById("btn");
+    let colorText = document.getElementById("colorName");
+
+    // TODO: Add event listener for button click
+    // Inside it:
+    // 1. Generate a random color use-this : let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    // 2. Change background color of body
+    // 3. Update color name text
+  </script>
+
+</body>
+</html>
