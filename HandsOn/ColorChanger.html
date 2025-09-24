@@ -13,11 +13,13 @@
       font-size: 18px;
       margin-top: 50px;
       cursor: pointer;
+      transition: background-color 0.5s, color 0.5s;
     }
     #colorName {
       margin-top: 20px;
       font-size: 22px;
       font-weight: bold;
+      transition: color 0.5s;
     }
   </style>
 </head>
@@ -30,12 +32,42 @@
   <script>
     let button = document.getElementById("btn");
     let colorText = document.getElementById("colorName");
+    const colorNames = {
+      "#000000": "Black",
+      "#ffffff": "White",
+      "#ff0000": "Red",
+      "#00ff00": "Lime",
+      "#0000ff": "Blue",
+      "#ffff00": "Yellow",
+      "#00ffff": "Cyan",
+      "#ff00ff": "Magenta",
+      "#808080": "Gray",
+      "#800000": "Maroon",
+      "#008000": "Green",
+      "#000080": "Navy",
+      "#808000": "Olive",
+      "#800080": "Purple",
+      "#008080": "Teal",
+      "#c0c0c0": "Silver"
+    };
 
-    // TODO: Add event listener for button click
-    // Inside it:
-    // 1. Generate a random color use-this : let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    // 2. Change background color of body
-    // 3. Update color name text
+    function getRandomColor() {
+      return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    }
+
+    function getColorName(hex) {
+      hex = hex.toLowerCase();
+      if (colorNames[hex]) {
+        return colorNames[hex];
+      }
+      return hex;
+    }
+
+    button.addEventListener("click", function() {
+      let bgColor = getRandomColor();
+      document.body.style.backgroundColor = bgColor;
+      colorText.textContent = `Current Color: ${getColorName(bgColor)}`;
+    });
   </script>
 
 </body>
